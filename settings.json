@@ -1,0 +1,27 @@
+{
+  "model": "sonnet",
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "additionalDirectories": [
+      "~/.claude",
+      "~/.neurora/claude-code",
+      "~/__core__/rag",
+      "~/__core__/neurora",
+      "~/__core__/my-docusaurus/my-website/my-documents"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx ccm track",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

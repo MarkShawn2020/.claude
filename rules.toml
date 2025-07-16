@@ -1,0 +1,17 @@
+# Claude Code Rules Configuration
+# This file contains rules to automatically trigger Context7 MCP when appropriate
+
+[[calls]]
+match = "when the user requests code examples, setup or configuration steps, API documentation, library implementation, or asks about specific frameworks, libraries, or technical topics"
+tool = "context7"
+description = "Automatically invoke Context7 MCP to fetch up-to-date documentation"
+
+[[calls]]
+match = "when the user mentions specific libraries, frameworks, or asks how to use or implement something with a particular technology"
+tool = "context7"
+description = "Auto-fetch library documentation for implementation questions"
+
+[[calls]]
+match = "when the user asks about best practices, configuration, or implementation details for web development, databases, or cloud services"
+tool = "context7"
+description = "Get current best practices and documentation"

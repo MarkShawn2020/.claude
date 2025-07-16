@@ -1,0 +1,5 @@
+.DS_Store
+projects/
+todos/
+*.sql
+settings.local.json
