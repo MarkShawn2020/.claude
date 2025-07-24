@@ -10,8 +10,13 @@
 
 ### JS/TS/TSX 开发规范
 - **禁止** 使用 setTimeout 等代码，应优先使用 async/await/callback 等
-- **禁止** 使用动态导入方案，只允许在文件顶部 import，使用 ESM 
-
+- **禁止** 使用动态导入方案，包括但不限于：
+  - `import()` 动态导入语法
+  - `await import()` 异步导入
+  - 在运行时通过变量动态导入模块
+  - 只允许在文件顶部使用静态 `import` 声明，使用 ESM
+  - Node.js 脚本应使用 `require()` 而不是动态 `import()` 
+- 在解决问题之后，如果脚本里有lint-fix或者typecheck，请运行并修复直到没有错误
 
 ## 设计规范
 - 在涉及到appd的本地存储时，路径为`~/.neurora/$APP_ID` 

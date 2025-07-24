@@ -4,10 +4,9 @@
     "defaultMode": "bypassPermissions",
     "additionalDirectories": [
       "~/.claude",
-      "~/.neurora/claude-code",
-      "~/__core__/rag",
-      "~/__core__/neurora",
-      "~/__core__/my-docusaurus/my-website/my-documents"
+      "~/.neurora",
+      "~/__core__",
+      "~/projects"
     ]
   },
   "hooks": {

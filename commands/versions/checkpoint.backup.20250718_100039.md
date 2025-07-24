@@ -1,17 +1,6 @@
 ---
 description: 项目检查点：历史感知 + 主动文档维护 + 智能提交
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git branch:*), Bash(git log:*), Bash(git diff:*), Edit, Write, Read, Glob
-version: "1.1.0"
-author: markshawn2020
-created: "2025-07-18"
-updated: "2025-07-18"
-changelog:
-  - version: "1.1.0"
-    date: "2025-07-18"
-    changes: ["Added handling for projects without README.md files"]
-  - version: "1.0.0"
-    date: "2025-07-18"
-    changes: ["Initial version with historical awareness and smart commits"]
 ---
 
 # Checkpoint - 项目检查点命令
@@ -57,17 +46,11 @@ changelog:
 
 ### 2. 主动文档维护
 
-#### README.md 自动更新（强制执行）
+#### README.md 自动更新（满足条件时）
 **触发条件**：
 - 包含模板占位符（`[PROJECT_NAME]`、`TODO`等）
 - 文档落后代码超过30天
 - 与配置文件信息不一致
-- 内容明显过时或不完整
-
-**强制更新策略**：
-- 检测到明显需要更新时，直接执行更新而非仅提示
-- 备份原README为README.backup.md
-- 基于当前项目状态重新生成完整文档
 
 **更新内容**：
     # 项目名称
