@@ -1,14 +1,17 @@
 {
-  "model": "sonnet",
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "defaultMode": "bypassPermissions",
     "additionalDirectories": [
       "~/.claude",
+      "~/.gemini",
       "~/.neurora",
       "~/__core__",
-      "~/projects"
+      "~/projects",
+      "~/repos"
     ]
   },
+  "model": "opus",
   "hooks": {
     "PostToolUse": [
       {
@@ -16,11 +19,14 @@
         "hooks": [
           {
             "type": "command",
-            "command": "npx ccm track",
+            "command": "npx claude-code-manager track",
             "timeout": 5
           }
         ]
       }
     ]
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1754071238543
   }
 }
