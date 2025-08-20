@@ -1,0 +1,13 @@
+# Changelog for git-add-commit
+
+## v1.0.1 - 2025-08-20
+- Renamed command from commit to git-add-commit
+
+## v1.0.0 - 2025-08-20
+- Initial version with conventional commit support
+- Default language settings (Chinese)
+- User input for additional context
+
+Author: 公众号：手工川
+Created: 2025-08-20
+Updated: 2025-08-20

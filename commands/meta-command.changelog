@@ -1,0 +1,25 @@
+# Changelog for meta-command
+
+## v3.2.0 - 2025-08-20
+- Simplified instructions to save 50% more context tokens
+- Added Append tool for changelog updates
+- Streamlined documentation structure
+
+## v3.1.0 - 2025-08-20
+- Renamed from generate-command to meta-command for better clarity
+
+## v3.0.0 - 2025-08-20
+- BREAKING: Switched to two-file approach (command.md + command.changelog)
+- Removed embedded changelog from command files to save LLM context
+- Simplified metadata management
+- Maintained full version history in separate .changelog files
+
+## v2.1.0 - 2025-01-16
+- Added target directory awareness to prevent scanning current directory when generating commands for future use
+
+## v2.0.0 - 2025-01-16
+- Added version management features
+
+Author: 公众号：手工川
+Created: 2025-01-16
+Updated: 2025-08-20
