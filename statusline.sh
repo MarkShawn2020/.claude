@@ -1,0 +1,1 @@
+/Users/mark/projects/claude-code-manager/modules/statusline/vibe-genius.sh

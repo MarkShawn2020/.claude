@@ -20,9 +20,7 @@ This command analyzes your project structure and either creates a new README.md 
 
 ## Usage
 
-```
-/better-readme
-```
+    /better-readme
 
 ## What this command does:
 

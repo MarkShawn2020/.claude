@@ -23,9 +23,8 @@ changelog:
 This command automates the process of converting a cloned repository into your own GitHub repository that appears as a fork of the original.
 
 ## Usage
-```
-/fork-repo [new-repo-name] [description]
-```
+
+    /fork-repo [new-repo-name] [description]
 
 ## Process
 
@@ -55,45 +54,39 @@ This command automates the process of converting a cloned repository into your o
 Please follow these steps:
 
 1. First, verify we're in a git repository and check current status:
-   ```bash
-   git status
-   git remote -v
-   git log --oneline -5
-   ```
+
+       git status
+       git remote -v
+       git log --oneline -5
 
 2. Extract original repository information from current remote:
-   ```bash
-   ORIGINAL_REMOTE=$(git remote get-url origin)
-   # Parse GitHub repository from the remote URL
-   ```
+
+       ORIGINAL_REMOTE=$(git remote get-url origin)
+       # Parse GitHub repository from the remote URL
 
 3. Check if target fork already exists and delete if needed:
-   ```bash
-   # Extract repo name from arguments or use current directory
-   REPO_NAME=${1:-$(basename $(pwd))}
-   # Check if fork already exists
-   if gh repo view $REPO_NAME 2>/dev/null; then
-       echo "Repository already exists, deleting..."
-       gh repo delete $REPO_NAME --yes
-   fi
-   ```
+
+       # Extract repo name from arguments or use current directory
+       REPO_NAME=${1:-$(basename $(pwd))}
+       # Check if fork already exists
+       if gh repo view $REPO_NAME 2>/dev/null; then
+           echo "Repository already exists, deleting..."
+           gh repo delete $REPO_NAME --yes
+       fi
 
 4. Create proper fork using GitHub CLI:
-   ```bash
-   # Extract owner/repo from original remote URL
-   gh repo fork $ORIGINAL_OWNER/$ORIGINAL_REPO --clone=false
-   ```
+
+       # Extract owner/repo from original remote URL
+       gh repo fork $ORIGINAL_OWNER/$ORIGINAL_REPO --clone=false
 
 5. Update local repository to point to the fork:
-   ```bash
-   git remote set-url origin git@github.com:$(gh auth status | grep 'Account:' | awk '{print $2}')/$REPO_NAME.git
-   ```
+
+       git remote set-url origin git@github.com:$(gh auth status | grep 'Account:' | awk '{print $2}')/$REPO_NAME.git
 
 6. Push all content to the fork:
-   ```bash
-   git push -u origin main
-   git push origin --tags
-   ```
+
+       git push -u origin main
+       git push origin --tags
 
 7. Provide final status and repository URL
 

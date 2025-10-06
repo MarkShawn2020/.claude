@@ -14,22 +14,20 @@ You are creating a git commit with the following features:
 
 ## Configuration Settings
 
-```yaml
-default_language: "zh-CN"
-commit_style: "conventional"
-types:
-  - feat: 新功能
-  - fix: 修复bug
-  - docs: 文档更新
-  - style: 代码格式调整
-  - refactor: 重构
-  - perf: 性能优化
-  - test: 测试相关
-  - build: 构建系统
-  - ci: CI/CD配置
-  - chore: 其他更改
-  - revert: 回滚提交
-```
+    default_language: "zh-CN"
+    commit_style: "conventional"
+    types:
+      - feat: 新功能
+      - fix: 修复bug
+      - docs: 文档更新
+      - style: 代码格式调整
+      - refactor: 重构
+      - perf: 性能优化
+      - test: 测试相关
+      - build: 构建系统
+      - ci: CI/CD配置
+      - chore: 其他更改
+      - revert: 回滚提交
 
 ## Workflow
 

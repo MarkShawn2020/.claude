@@ -6,12 +6,10 @@
       "~/.claude",
       "~/.gemini",
       "~/.neurora",
-      "~/__core__",
       "~/projects",
       "~/repos"
     ]
   },
-  "model": "opus",
   "hooks": {
     "PostToolUse": [
       {
@@ -25,6 +23,11 @@
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/mark/.claude/statusline.sh",
+    "padding": 0
   },
   "feedbackSurveyState": {
     "lastShownTime": 1754071238543

@@ -53,19 +53,17 @@ Based on the user's requirements in $ARGUMENTS, analyze what they want to achiev
 ## Output Format
 
 Provide commands in this format:
-```bash
-# Brief explanation of what this accomplishes
-command-here --with-appropriate-flags
-```
+
+    # Brief explanation of what this accomplishes
+    command-here --with-appropriate-flags
 
 If multiple steps are needed, number them:
-```bash
-# Step 1: Explanation
-first-command
 
-# Step 2: Explanation  
-second-command
-```
+    # Step 1: Explanation
+    first-command
+    
+    # Step 2: Explanation  
+    second-command
 
 ## Current Context
 

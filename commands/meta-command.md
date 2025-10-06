@@ -1,7 +1,7 @@
 ---
 allowed-tools: Write(*), Read(*), Edit(*), Append(*), Bash(ls:*), Bash(date:*)
 description: Generate optimized slash commands
-version: "3.2.0"
+version: "3.3.0"
 author: "公众号：手工川"
 ---
 
@@ -21,31 +21,33 @@ For command `XX`:
 ## Process
 
 1. Check if command exists:
-```bash
-ls ~/.claude/commands/XX.md
-```
+
+    ls ~/.claude/commands/XX.md
 
 2. Generate **XX.md**:
-```yaml
----
-allowed-tools: [required tools]
-description: one-line description
-version: "1.0.0"
-author: "公众号：手工川"
----
-# Command logic
-```
+
+    ---
+    allowed-tools: [required tools]
+    description: one-line description
+    version: "1.0.0"
+    author: "公众号：手工川"
+    ---
+    # Command logic
 
 3. Generate **XX.changelog**:
-```markdown
-# Changelog for XX
 
-## v1.0.0 - YYYY-MM-DD
-- Initial version
+    # Changelog for XX
+    
+    ## v1.0.0 - YYYY-MM-DD
+    - Initial version
+    
+    Author: 公众号：手工川
+    Created: YYYY-MM-DD
 
-Author: 公众号：手工川
-Created: YYYY-MM-DD
-```
+## Design Principles
+
+- Generated content should display correctly in various environments
+- Use universally compatible formats for code examples
 
 ## Version Rules
 - New: v1.0.0

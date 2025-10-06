@@ -1,0 +1,82 @@
+# Changelog for better-project-structure
+
+## v2.0.0 - 2024-12-30
+
+### 🚀 重大重构 - 真正的泛化
+- **完全重写** - 从Python中心转向语言无关设计
+- **智能检测** - 自动识别16+种语言，20+种框架
+- **自适应系统** - 根据项目类型动态调整策略
+- **交互式界面** - 提供多种方案供用户选择
+- **配置驱动** - 支持.projectstructure.yaml自定义规则
+- **增量优化** - 分阶段改进而非一次性重构
+- **学习模式** - 记住并应用用户偏好
+- **社区最佳实践** - 基于流行开源项目的结构
+
+### 📋 新增语言支持
+- JavaScript/TypeScript (Node, React, Vue, Angular)
+- Java (Spring, Maven, Gradle)
+- Go (标准Go项目)
+- Rust (Cargo项目)
+- C/C++ (CMake, Make)
+- Ruby (Rails, Gem)
+- PHP (Laravel, Symfony)
+- C#/.NET
+- Swift/Kotlin (移动开发)
+- Dart/Flutter
+- Elixir, Scala, R, Julia
+
+### 🎯 项目类型识别
+- CLI工具
+- 库/包
+- Web应用（前端/后端/全栈）
+- 微服务
+- Monorepo
+- 数据科学项目
+- 游戏开发
+- 移动应用
+- 桌面应用
+- DevOps/基础设施
+
+### ⚙️ 执行模式
+- `--minimal` - 仅清理垃圾
+- `--standard` - 智能建议
+- `--verbose` - 完整交互
+- `--dry-run` - 预览模式
+- `--config` - 使用配置文件
+
+## v1.0.0 - 2024-12-30
+
+### 初始版本功能
+- 智能项目结构分析
+- 自动文件分类和迁移
+- 标准目录结构创建
+- 代码/文档/脚本/配置智能识别
+- 垃圾文件自动清理
+- .gitignore智能生成/更新
+- 主入口文件优化
+- 专业README模板生成
+- 详细清理报告生成
+
+### 支持的项目类型
+- Python通用项目
+- Django/Flask/FastAPI项目
+- 数据科学项目
+- 混合语言项目
+
+### 安全特性
+- 文件移动而非删除
+- 旧代码安全归档到legacy/
+- 生成回滚脚本
+- 操作前确认机制
+
+### 智能识别
+- 自动识别框架类型
+- 区分新旧代码
+- 识别构建产物
+- 检测临时文件
+- 分析依赖关系
+
+Author: 公众号：手工川
+Created: 2024-12-30
+Category: Project Management
+Tags: #cleanup #structure #organization #refactor

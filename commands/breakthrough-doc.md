@@ -71,66 +71,60 @@ Create `/docs/[breakthrough-name].md` with:
 ## Documentation Templates
 
 ### Major Breakthrough Structure
-```markdown
-# [Breakthrough Name]
 
-**Date**: YYYY-MM-DD  
-**Difficulty**: ⭐⭐⭐⭐⭐ (1-5 stars)  
-**Impact**: [Brief impact statement]
-
-## Problem Background
-[Detailed problem context and challenges]
-
-## Technical Challenge
-[Specific technical difficulties and why they matter]
-
-## Solution Architecture
-[How the breakthrough solution works]
-
-## Implementation Details
-[Key code and technical implementation]
-
-## Testing & Validation
-[How to verify and test the solution]
-
-## Technical Innovation
-[What makes this solution innovative]
-
-## Reusability
-[How this can be applied to other projects]
-
-## Future Directions
-[Potential improvements and extensions]
-```
+    # [Breakthrough Name]
+    
+    **Date**: YYYY-MM-DD  
+    **Difficulty**: ⭐⭐⭐⭐⭐ (1-5 stars)  
+    **Impact**: [Brief impact statement]
+    
+    ## Problem Background
+    [Detailed problem context and challenges]
+    
+    ## Technical Challenge
+    [Specific technical difficulties and why they matter]
+    
+    ## Solution Architecture
+    [How the breakthrough solution works]
+    
+    ## Implementation Details
+    [Key code and technical implementation]
+    
+    ## Testing & Validation
+    [How to verify and test the solution]
+    
+    ## Technical Innovation
+    [What makes this solution innovative]
+    
+    ## Reusability
+    [How this can be applied to other projects]
+    
+    ## Future Directions
+    [Potential improvements and extensions]
 
 ### Code Documentation Template
-```markdown
-### Key Implementation: [Function/Module Name]
-```[language]
-[Annotated code with explanations]
-```
 
-**Why this works**: [Technical explanation]
-**Critical insight**: [Key realization that made it possible]
-**Alternative approaches**: [Other solutions considered]
-```
+    ### Key Implementation: [Function/Module Name]
+    
+        [Annotated code with explanations]
+    
+    **Why this works**: [Technical explanation]
+    **Critical insight**: [Key realization that made it possible]
+    **Alternative approaches**: [Other solutions considered]
 
 ## Command Usage Patterns
 
 ### Basic Breakthrough Documentation
-```
-/breakthrough-doc "Focus Management System" - Document the Alfred-style focus management breakthrough
-```
+
+    /breakthrough-doc "Focus Management System" - Document the Alfred-style focus management breakthrough
 
 ### With Specific Components
-```
-/breakthrough-doc "Real-time Collaboration" --components="WebRTC,CRDT,Conflict Resolution" --impact="high"
-```
+
+    /breakthrough-doc "Real-time Collaboration" --components="WebRTC,CRDT,Conflict Resolution" --impact="high"
 
 ### With Performance Focus
-```
-/breakthrough-doc "Query Optimization" --metrics --before-after --benchmarks
-```
+
+    /breakthrough-doc "Query Optimization" --metrics --before-after --benchmarks
 
 ## Quality Standards
 

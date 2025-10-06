@@ -1,5 +1,11 @@
 # Changelog for meta-command
 
+## v3.3.0 - 2025-08-20
+- 改进：生成的命令文件使用安全的缩进格式
+- 新增：避免三反引号导致的嵌套渲染问题
+- 优化：所有代码示例改用4空格缩进
+- 说明：确保命令文件可安全复制到任何 Markdown 环境
+
 ## v3.2.0 - 2025-08-20
 - Simplified instructions to save 50% more context tokens
 - Added Append tool for changelog updates
