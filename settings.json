@@ -11,24 +11,14 @@
     ]
   },
   "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "npx claude-code-manager track",
-            "timeout": 5
-          }
-        ]
-      }
-    ]
+    "PostToolUse": []
   },
   "statusLine": {
     "type": "command",
     "command": "/Users/mark/.claude/statusline.sh",
     "padding": 0
   },
+  "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754071238543
   }
