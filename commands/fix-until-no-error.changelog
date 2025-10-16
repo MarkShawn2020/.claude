@@ -1,0 +1,10 @@
+# Changelog for fix-until-no-error
+
+## v1.0.0 - 2025-10-16
+- Initial version
+- Automated error fixing loop until success
+- Incremental validation and root cause focus
+- Infinite loop prevention mechanism
+
+Author: 公众号：手工川
+Created: 2025-10-16

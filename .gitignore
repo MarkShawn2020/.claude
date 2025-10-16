@@ -8,3 +8,5 @@ statsig
 ide
 file-history
 debug/
+.daily_*
+history.jsonl

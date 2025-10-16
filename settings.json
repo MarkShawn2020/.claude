@@ -18,7 +18,7 @@
     "command": "/Users/mark/.claude/statusline.sh",
     "padding": 0
   },
-  "alwaysThinkingEnabled": true,
+  "alwaysThinkingEnabled": false,
   "feedbackSurveyState": {
     "lastShownTime": 1754071238543
   }
