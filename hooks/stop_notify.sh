@@ -53,9 +53,14 @@ afplay /System/Library/Sounds/Glass.aiff &
 
 # 优先使用 terminal-notifier（更可靠）
 if command -v terminal-notifier &> /dev/null; then
-    echo "Using terminal-notifier" >> "$LOG_FILE"
-    # 尝试激活终端窗口以确保通知可见
-    terminal-notifier -title "Claude Code 完成" -message "$notification_body" -sound Glass -group "claude-code-stop" 2>> "$LOG_FILE"
+    echo "Using terminal-notifier with ignoreDND" >> "$LOG_FILE"
+    # 使用关键警报级别，忽略勿扰模式，强制弹屏
+    terminal-notifier \
+        -title "Claude Code 完成" \
+        -message "$notification_body" \
+        -sound Glass \
+        -ignoreDnD \
+        -group "claude-code-stop" 2>> "$LOG_FILE"
     notify_result=$?
 else
     echo "Using osascript" >> "$LOG_FILE"
