@@ -48,10 +48,14 @@ fi
 # 发送通知
 echo "Notification body: $notification_body" >> "$LOG_FILE"
 
+# 播放声音（确保有反馈）
+afplay /System/Library/Sounds/Glass.aiff &
+
 # 优先使用 terminal-notifier（更可靠）
 if command -v terminal-notifier &> /dev/null; then
     echo "Using terminal-notifier" >> "$LOG_FILE"
-    terminal-notifier -title "Claude Code 完成" -message "$notification_body" -sound Glass 2>> "$LOG_FILE"
+    # 尝试激活终端窗口以确保通知可见
+    terminal-notifier -title "Claude Code 完成" -message "$notification_body" -sound Glass -group "claude-code-stop" 2>> "$LOG_FILE"
     notify_result=$?
 else
     echo "Using osascript" >> "$LOG_FILE"

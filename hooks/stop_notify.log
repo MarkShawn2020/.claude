@@ -1,9 +1,0 @@
-=== 2025年11月 2日 星期日 02时04分24秒 CST ===
-Input: {"session_id":"7b43c1eb-0089-411d-b8de-5fa92c880043","transcript_path":"/Users/mark/.claude/projects/-Users-mark--claude/7b43c1eb-0089-411d-b8de-5fa92c880043.jsonl","cwd":"/Users/mark/.claude","permission_mode":"bypassPermissions","hook_event_name":"Stop","stop_hook_active":false}
-Transcript path: /Users/mark/.claude/projects/-Users-mark--claude/7b43c1eb-0089-411d-b8de-5fa92c880043.jsonl
-Expanded path: /Users/mark/.claude/projects/-Users-mark--claude/7b43c1eb-0089-411d-b8de-5fa92c880043.jsonl
-Transcript file found
-Notification body: 任务已完成
-Using terminal-notifier
-Notification result: 0
-
