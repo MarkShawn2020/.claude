@@ -14,7 +14,12 @@
     "PostToolUse": [],
     "Stop": [
       {
-        "command": "~/.claude/hooks/stop_notify.sh"
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/stop_notify.sh"
+          }
+        ]
       }
     ]
   },
