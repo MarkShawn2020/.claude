@@ -1,0 +1,9 @@
+=== 2025年11月 2日 星期日 02时12分28秒 CST ===
+Input: {"session_id":"0db4bb1e-ac67-4e36-94c7-4c4888ed3b1f","transcript_path":"/Users/mark/.claude/projects/-Users-mark--claude/0db4bb1e-ac67-4e36-94c7-4c4888ed3b1f.jsonl","cwd":"/Users/mark/.claude","permission_mode":"bypassPermissions","hook_event_name":"Stop","stop_hook_active":false}
+Transcript path: /Users/mark/.claude/projects/-Users-mark--claude/0db4bb1e-ac67-4e36-94c7-4c4888ed3b1f.jsonl
+Expanded path: /Users/mark/.claude/projects/-Users-mark--claude/0db4bb1e-ac67-4e36-94c7-4c4888ed3b1f.jsonl
+Transcript file found
+Notification body: 任务已完成
+Using osascript alert
+Notification result: 0
+

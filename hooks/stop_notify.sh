@@ -51,19 +51,22 @@ echo "Notification body: $notification_body" >> "$LOG_FILE"
 # 播放声音（确保有反馈）
 afplay /System/Library/Sounds/Glass.aiff &
 
-# 使用 AppleScript 创建一个短暂显示的 HUD 通知
-# 这种方式会强制弹屏，不受通知中心设置影响
-echo "Using osascript alert" >> "$LOG_FILE"
-osascript <<EOF 2>> "$LOG_FILE" &
-    display notification "$notification_body" with title "✅ Claude Code 完成" sound name "Glass"
-
-    -- 如果通知被静默，用一个快速消失的对话框
-    try
-        set dialogResult to display dialog "$notification_body" with title "Claude Code 完成" buttons {"确定"} default button 1 giving up after 3
-    end try
-EOF
-
-notify_result=$?
+# 使用 terminal-notifier 发送通知
+# 关键：使用 -activate 激活应用以提高通知可见性
+echo "Using terminal-notifier" >> "$LOG_FILE"
+if command -v terminal-notifier &> /dev/null; then
+    terminal-notifier \
+        -title "Claude Code 完成" \
+        -message "$notification_body" \
+        -sound Glass \
+        -sender nl.superalloy.oss.terminal-notifier \
+        -group "claude-code-stop" 2>> "$LOG_FILE"
+    notify_result=$?
+else
+    echo "terminal-notifier not found" >> "$LOG_FILE"
+    osascript -e "display notification \"$notification_body\" with title \"Claude Code 完成\" sound name \"Glass\"" 2>> "$LOG_FILE"
+    notify_result=$?
+fi
 
 echo "Notification result: $notify_result" >> "$LOG_FILE"
 echo "" >> "$LOG_FILE"
