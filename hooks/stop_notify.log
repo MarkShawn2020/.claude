@@ -1,8 +1,9 @@
-=== 2025年11月 2日 星期日 02时02分03秒 CST ===
-Input: {"session_id":"133cbf52-79f0-412a-8b2d-2230ebcf87c1","transcript_path":"/Users/mark/.claude/projects/-Users-mark--claude/133cbf52-79f0-412a-8b2d-2230ebcf87c1.jsonl","cwd":"/Users/mark/.claude","permission_mode":"bypassPermissions","hook_event_name":"Stop","stop_hook_active":false}
-Transcript path: /Users/mark/.claude/projects/-Users-mark--claude/133cbf52-79f0-412a-8b2d-2230ebcf87c1.jsonl
-Expanded path: /Users/mark/.claude/projects/-Users-mark--claude/133cbf52-79f0-412a-8b2d-2230ebcf87c1.jsonl
+=== 2025年11月 2日 星期日 02时04分24秒 CST ===
+Input: {"session_id":"7b43c1eb-0089-411d-b8de-5fa92c880043","transcript_path":"/Users/mark/.claude/projects/-Users-mark--claude/7b43c1eb-0089-411d-b8de-5fa92c880043.jsonl","cwd":"/Users/mark/.claude","permission_mode":"bypassPermissions","hook_event_name":"Stop","stop_hook_active":false}
+Transcript path: /Users/mark/.claude/projects/-Users-mark--claude/7b43c1eb-0089-411d-b8de-5fa92c880043.jsonl
+Expanded path: /Users/mark/.claude/projects/-Users-mark--claude/7b43c1eb-0089-411d-b8de-5fa92c880043.jsonl
 Transcript file found
 Notification body: 任务已完成
+Using terminal-notifier
 Notification result: 0
 
