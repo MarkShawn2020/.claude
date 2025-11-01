@@ -1,15 +1,28 @@
 #!/bin/bash
 
+# 日志文件
+LOG_FILE="$HOME/.claude/hooks/stop_notify.log"
+
+# 记录启动
+echo "=== $(date) ===" >> "$LOG_FILE"
+
 # 读取 hook 输入
 input=$(cat)
+echo "Input: $input" >> "$LOG_FILE"
+
 transcript_path=$(echo "$input" | jq -r '.transcript_path')
+echo "Transcript path: $transcript_path" >> "$LOG_FILE"
 
 # 展开波浪号
 transcript_path="${transcript_path/#\~/$HOME}"
+echo "Expanded path: $transcript_path" >> "$LOG_FILE"
 
 if [ ! -f "$transcript_path" ]; then
+    echo "Transcript file not found!" >> "$LOG_FILE"
     exit 0
 fi
+
+echo "Transcript file found" >> "$LOG_FILE"
 
 # 提取最后几条消息，分析对话内容
 last_user_msg=$(tail -n 50 "$transcript_path" | jq -r 'select(.type == "message" and .role == "user") | .content[] | select(.type == "text") | .text' | tail -n 1 | head -c 100)
@@ -33,6 +46,11 @@ if [ -n "$last_tools" ]; then
 fi
 
 # 发送通知（使用 Glass 提示音）
-osascript -e "display notification \"$notification_body\" with title \"Claude Code 完成\" sound name \"Glass\""
+echo "Notification body: $notification_body" >> "$LOG_FILE"
+osascript -e "display notification \"$notification_body\" with title \"Claude Code 完成\" sound name \"Glass\"" 2>> "$LOG_FILE"
+
+notify_result=$?
+echo "Notification result: $notify_result" >> "$LOG_FILE"
+echo "" >> "$LOG_FILE"
 
 exit 0

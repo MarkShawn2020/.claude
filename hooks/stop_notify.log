@@ -1,0 +1,8 @@
+=== 2025年11月 2日 星期日 02时02分03秒 CST ===
+Input: {"session_id":"133cbf52-79f0-412a-8b2d-2230ebcf87c1","transcript_path":"/Users/mark/.claude/projects/-Users-mark--claude/133cbf52-79f0-412a-8b2d-2230ebcf87c1.jsonl","cwd":"/Users/mark/.claude","permission_mode":"bypassPermissions","hook_event_name":"Stop","stop_hook_active":false}
+Transcript path: /Users/mark/.claude/projects/-Users-mark--claude/133cbf52-79f0-412a-8b2d-2230ebcf87c1.jsonl
+Expanded path: /Users/mark/.claude/projects/-Users-mark--claude/133cbf52-79f0-412a-8b2d-2230ebcf87c1.jsonl
+Transcript file found
+Notification body: 任务已完成
+Notification result: 0
+
