@@ -11,7 +11,12 @@
     ]
   },
   "hooks": {
-    "PostToolUse": []
+    "PostToolUse": [],
+    "Stop": [
+      {
+        "command": "~/.claude/hooks/stop_notify.sh"
+      }
+    ]
   },
   "statusLine": {
     "type": "command",
