@@ -49,7 +49,7 @@ fi
 echo "Notification body: $notification_body" >> "$LOG_FILE"
 
 # 播放声音（确保有反馈）
-afplay /System/Library/Sounds/Glass.aiff &
+afplay /System/Library/Sounds/Hero.aiff &
 
 # 使用 terminal-notifier 发送通知
 # 关键：使用 -activate 激活应用以提高通知可见性
@@ -58,7 +58,7 @@ if command -v terminal-notifier &> /dev/null; then
     terminal-notifier \
         -title "Claude Code 完成" \
         -message "$notification_body" \
-        -sound Glass \
+        -sound Hero \
         -sender nl.superalloy.oss.terminal-notifier \
         -group "claude-code-stop" 2>> "$LOG_FILE"
     notify_result=$?
