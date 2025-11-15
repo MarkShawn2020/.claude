@@ -15,7 +15,7 @@ description: "基于 README.md 自动更新 GitHub 仓库信息"
 
 ## 使用方法
 
-在项目根目录执行：`/update-repo`
+在项目根目录执行：`/better-github-desc`
 
 ## 注意事项
 

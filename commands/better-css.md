@@ -5,7 +5,7 @@ version: "1.0.0"
 author: "公众号：手工川"
 ---
 
-# Clean CSS Command
+# Better CSS Command
 
 智能 CSS 代码重构工具，专注于优化和清理 CSS 代码质量。
 
@@ -86,19 +86,19 @@ author: "公众号：手工川"
 
 ### 基础重构
 ```bash
-/clean-css
+/better-css
 ```
 自动分析并优化项目中的所有 CSS 文件
 
 ### 指定文件
 ```bash
-/clean-css src/App.css
+/better-css src/App.css
 ```
 重构特定的 CSS 文件
 
 ### 仅分析不修改
 ```bash
-/clean-css --dry-run
+/better-css --dry-run
 ```
 生成分析报告，不修改文件
 
@@ -170,7 +170,7 @@ Retained:
 
 ## 版本历史
 
-查看 `.claude/commands/clean-css.changelog` 了解详细更新记录。
+查看 `.claude/commands/better-css.changelog` 了解详细更新记录。
 
 ---
 
