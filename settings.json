@@ -11,7 +11,18 @@
     ]
   },
   "hooks": {
-    "PostToolUse": [],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx claude-code-manager track",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
