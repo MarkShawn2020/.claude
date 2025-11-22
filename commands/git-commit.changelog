@@ -1,0 +1,30 @@
+# Changelog for git-commit
+
+## v1.2.0 - 2025-11-22
+### Changed
+- Renamed command from git-add-commit to git-commit for brevity
+
+## v1.1.0 - 2025-11-22
+### Added
+- CHANGELOG.md auto-management support
+- Semantic version detection and bumping
+- Keep a Changelog format compliance
+- Auto-categorization (Added, Fixed, Changed, etc.)
+
+### Changed
+- Added Write, Edit, Glob tools to allowed-tools
+- Enhanced workflow with CHANGELOG update step
+
+## v1.0.1 - 2025-08-20
+### Changed
+- Renamed command from commit to git-add-commit
+
+## v1.0.0 - 2025-08-20
+### Added
+- Initial version with conventional commit support
+- Default language settings (Chinese)
+- User input for additional context
+
+Author: 公众号：手工川
+Created: 2025-08-20
+Updated: 2025-11-22
