@@ -1,0 +1,11 @@
+# Changelog for fix-by-add-log
+
+## v1.0.0 - 2025-11-29
+
+- Initial version
+- 支持多语言日志格式（JS/TS、Python、Go）
+- 策略性日志添加流程
+- 统一的 [DEBUG] 前缀便于后续清理
+
+Author: 公众号：手工川
+Created: 2025-11-29
