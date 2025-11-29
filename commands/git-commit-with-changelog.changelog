@@ -1,5 +1,22 @@
 # Changelog for git-commit-with-changelog
 
+## v3.0.0 - 2025-11-29
+### Breaking Changes
+- **Auto commit**: Commit automatically without user confirmation (most commits are acceptable)
+- **Streamlined release**: When user confirms CHANGELOG update, auto-update, amend commit, and create tag in one flow
+
+### Changed
+- Removed commit confirmation step - commits execute immediately
+- Simplified CHANGELOG question to "是否需要更新 CHANGELOG 并发布新版本？"
+- Release flow now uses `git commit --amend --no-edit` to include CHANGELOG in same commit
+- Auto-creates version tag after CHANGELOG update
+- Removed [Unreleased] workflow - all CHANGELOG updates are for releases
+
+### Updated
+- All examples reflect new auto-commit + streamlined release workflow
+- Command behavior section simplified
+- Version workflow shows single-step release process
+
 ## v2.3.0 - 2025-11-26
 ### Changed
 - **Commit first**: Workflow now commits code BEFORE asking about CHANGELOG
@@ -102,4 +119,4 @@
 
 Author: 公众号：手工川
 Created: 2025-08-20
-Updated: 2025-11-26
+Updated: 2025-11-29

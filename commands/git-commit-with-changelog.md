@@ -1,19 +1,19 @@
 ---
 allowed-tools: [Bash, Read, Write, Edit, Grep, Glob]
 description: Commit with user-focused CHANGELOG management
-version: "2.3.0"
+version: "3.0.0"
 author: "公众号：手工川"
 ---
 
 # Git Commit with CHANGELOG Management
 
 You are managing git commits with user-focused CHANGELOG:
-- **Commit first**: Always complete the code commit before any CHANGELOG operations
+- **Auto commit**: Automatically commit without confirmation (most commits are acceptable)
 - **Default language**: Chinese (中文) for commit messages
 - **Conventional Commit style**: Use conventional commit format (type(scope): description)
 - **User context integration**: Accept and incorporate user-provided additional context
 - **CHANGELOG for end users**: Concise, high-level summaries for software users (not developers)
-- **Manual curation**: Human-written summaries, not automatic commit duplication
+- **Streamlined release**: When user confirms CHANGELOG update, auto-update, amend commit, and create tag
 - **Tag-based versions**: CHANGELOG only tracks git-tagged versions (real releases)
 
 ## Configuration Settings
@@ -61,7 +61,7 @@ You are managing git commits with user-focused CHANGELOG:
 
 ## Workflow
 
-### Phase 1: Commit First (Primary Task)
+### Phase 1: Auto Commit (No Confirmation Needed)
 
 1. **Analyze current changes**:
    - Run `git status` to check for uncommitted changes
@@ -82,29 +82,31 @@ You are managing git commits with user-focused CHANGELOG:
    - Keep the subject line under 50 characters
    - Add detailed body if needed (wrapped at 72 characters)
 
-4. **Stage and commit** (WITHOUT CHANGELOG):
+4. **Stage and commit automatically** (NO confirmation):
    - Stage user's code changes only (exclude CHANGELOG.md)
-   - Create the commit with the generated message
+   - Create the commit immediately - no user confirmation needed
    - Show the commit result to the user
-   - **Commit is now complete** - user's code is safely committed
+   - **Commit is now complete** - proceed to ask about CHANGELOG
 
-### Phase 2: CHANGELOG Management (After Commit)
+### Phase 2: CHANGELOG & Release (After Commit)
 
 5. **Ask user about CHANGELOG update**:
-   - After successful commit, ask: "是否需要更新 CHANGELOG？"
+   - After successful commit, ask: "是否需要更新 CHANGELOG 并发布新版本？"
    - Options:
-     - **No** (default for most commits): Skip CHANGELOG entirely
-     - **Yes, add to [Unreleased]**: Add entry to [Unreleased] section
-     - **Yes, prepare release**: Create new version section
+     - **No** (default): Skip CHANGELOG, workflow ends
+     - **Yes**: Proceed to release flow
    - If user says no, workflow ends here
 
-6. **If CHANGELOG update requested**:
-   - Check if CHANGELOG.md exists, create if missing
+6. **If CHANGELOG update confirmed** (auto release flow):
+   - Ask user for version number (e.g., v1.2.0)
    - Ask user for concise, user-focused description (2-5 lines)
-   - Add to appropriate section ([Unreleased] or new version)
-   - Create separate commit for CHANGELOG update
+   - Check if CHANGELOG.md exists, create if missing
+   - Add new version section to CHANGELOG
+   - **Auto amend commit** to include CHANGELOG: `git add CHANGELOG.md && git commit --amend --no-edit`
+   - **Auto create tag**: `git tag <version>`
+   - Show summary: amended commit hash, version tag created
 
-7. **Validate CHANGELOG against git tags** (if releasing):
+7. **Validate CHANGELOG against git tags** (if missing versions):
    - Get all git tags with `git tag -l --sort=-version:refname`
    - Filter semver tags (v1.2.3 or 1.2.3 format)
    - Parse existing CHANGELOG.md version entries
@@ -118,28 +120,22 @@ When the user runs `/git-commit-with-changelog`, you should:
 **Scenario 1: Normal development commit (most common)**
 1. Check git status - uncommitted changes found
 2. Generate conventional commit message
-3. Stage and commit user's code changes
-4. **After commit succeeds**, ask: "是否需要更新 CHANGELOG？"
+3. **Auto commit** - no confirmation needed
+4. Ask: "是否需要更新 CHANGELOG 并发布新版本？"
 5. User says no (default)
 6. Workflow ends - commit complete
 
-**Scenario 2: Commit with CHANGELOG update**
+**Scenario 2: Commit with release**
 1. Check git status - uncommitted changes found
 2. Generate conventional commit message
-3. Stage and commit user's code changes
-4. **After commit succeeds**, ask: "是否需要更新 CHANGELOG？"
-5. User says yes, wants to add to [Unreleased]
-6. Ask user for concise description
-7. Update CHANGELOG and create separate commit
-
-**Scenario 3: Release preparation**
-1. User has already committed all code
-2. User runs command with intent to release
-3. Ask for version number and CHANGELOG summary
-4. Check for any missing versions in CHANGELOG (validate against tags)
-5. Update CHANGELOG with new version section
-6. Commit CHANGELOG
-7. User creates tag: `git tag v1.2.0`
+3. **Auto commit** - no confirmation needed
+4. Ask: "是否需要更新 CHANGELOG 并发布新版本？"
+5. User says yes
+6. Ask for version (e.g., v1.2.0) and description
+7. Update CHANGELOG
+8. **Auto amend commit** to include CHANGELOG
+9. **Auto create tag** (v1.2.0)
+10. Done - show summary with commit hash and tag
 
 ## CHANGELOG Format
 
@@ -171,11 +167,12 @@ When the user runs `/git-commit-with-changelog`, you should:
 
 ## Important Notes
 
-- **COMMIT FIRST**: Always complete the code commit before asking about CHANGELOG
+- **AUTO COMMIT**: Commit automatically without confirmation - most commits are acceptable
 - **CHANGELOG is optional**: Most commits don't need CHANGELOG updates
 - **CHANGELOG is for users, not developers**: High-level summaries, not commit logs
 - **Manual curation required**: Ask user to provide summaries, don't auto-generate from commits
 - **CHANGELOG reflects releases**: Only git-tagged versions appear as versioned sections
+- **Streamlined release**: When user confirms, auto-update CHANGELOG, amend commit, and create tag
 - Always analyze the TARGET directory where the command is run
 - Do NOT assume anything about the current directory structure
 - Support both staged and unstaged changes
@@ -186,7 +183,7 @@ When the user runs `/git-commit-with-changelog`, you should:
 - Use `git tag -l --sort=-version:refname` to find latest semver tags
 - Strip "v" prefix from git tags when parsing version (v1.2.3 → 1.2.3)
 - **Show commits as reference only**: When asking user to write summary for missing versions
-- If CHANGELOG is updated, commit it separately from code changes
+- **Amend for CHANGELOG**: Use `git commit --amend --no-edit` to include CHANGELOG in same commit
 
 ## User Input Parameters
 
@@ -199,33 +196,32 @@ The user can provide additional context in several ways:
 ## Command Behavior
 
 This command will:
-1. **COMMIT FIRST**: Always complete code commit before any CHANGELOG operations
-2. **Ask about CHANGELOG after commit**: "是否需要更新 CHANGELOG？"
-3. **Most commits**: Just create conventional commit, skip CHANGELOG (default)
-4. **If CHANGELOG requested**: Create separate commit for CHANGELOG updates
-5. **Release time**: Validate CHANGELOG against tags, ask for missing version summaries
+1. **AUTO COMMIT**: Commit automatically without asking for confirmation
+2. **Ask about release after commit**: "是否需要更新 CHANGELOG 并发布新版本？"
+3. **Most commits**: Just auto-commit, skip CHANGELOG (default)
+4. **If release requested**: Auto-update CHANGELOG, amend commit, create tag
 
 ## Version Workflow
 
 **Development flow:**
 ```
 Day 1-10: Normal development
-- Run command → commit code → "更新 CHANGELOG?" → No → Done
+- Run command → auto commit → "发布新版本?" → No → Done
 - Fast and simple for daily work
 
 Day 11: Ready to release
-- Run command → commit code → "更新 CHANGELOG?" → Yes, prepare release
+- Run command → auto commit → "发布新版本?" → Yes
 - Provide version: "v1.2.0"
 - Provide summary: "新增暗色模式\n提升性能\n修复崩溃"
-- Command updates CHANGELOG and commits
-- User creates tag: git tag v1.2.0
+- Command auto-updates CHANGELOG, amends commit, creates tag
+- Done! No additional manual steps needed
 ```
 
-**Key principle: Commit first, CHANGELOG second**
+**Key principle: Auto commit + streamlined release**
 ```
-1. git add + git commit (code changes)
-2. Ask user: CHANGELOG update needed?
-3. If yes: separate git commit (CHANGELOG only)
+1. git add + git commit (auto, no confirmation)
+2. Ask user: release new version?
+3. If yes: update CHANGELOG → amend commit → create tag (all auto)
 ```
 
 Generate appropriate conventional commit messages based on the actual changes in the target repository.
