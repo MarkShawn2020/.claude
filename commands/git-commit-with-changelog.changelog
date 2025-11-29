@@ -1,0 +1,105 @@
+# Changelog for git-commit-with-changelog
+
+## v2.3.0 - 2025-11-26
+### Changed
+- **Commit first**: Workflow now commits code BEFORE asking about CHANGELOG
+- **Phase order reversed**: Phase 1 is now "Commit First", Phase 2 is "CHANGELOG Management"
+- **CHANGELOG is optional**: Default behavior skips CHANGELOG, ask user after commit completes
+- **Cleaner separation**: Code commits and CHANGELOG commits are always separate
+
+### Updated
+- All scenarios and examples reflect the new "commit first" workflow
+- Command behavior section emphasizes "COMMIT FIRST" principle
+- Version workflow simplified with new flow diagram
+
+## v2.2.0 - 2025-11-23
+### Changed
+- **CHANGELOG philosophy**: Now focused on end users, not developers
+- **Manual curation**: Ask user for concise summaries instead of auto-generating from commits
+- **Simplified format**: Plain bullet points instead of Added/Fixed/Changed subsections
+- **Most commits skip CHANGELOG**: Only update during release preparation
+
+### Added
+- CHANGELOG philosophy section with good/bad examples
+- User-focused language guidelines (2-5 lines per version)
+- Development workflow example (days of commits → single release summary)
+
+### Fixed
+- CHANGELOG no longer technical/verbose commit duplication
+- Version summaries now meaningful to software users
+
+## v2.1.0 - 2025-11-23
+### Changed
+- **CHANGELOG now reflects real version history**: Only git-tagged versions appear as versioned sections
+- **[Unreleased] section**: New commits added to [Unreleased] until version is tagged
+- **Tag-based validation**: Repair CHANGELOG based on git tags, not every commit
+- **Version detection priority**: git tags > project files > default
+- **Version sync on tag only**: Only update version files when git tag exists
+
+### Added
+- Version workflow documentation: development → [Unreleased] → tag → versioned section
+- Tag-to-tag commit parsing with `git log <prev-tag>..<tag>`
+- Auto-move [Unreleased] entries to versioned section when tag detected
+
+### Fixed
+- CHANGELOG no longer bloated with every single commit
+- Version history accurately reflects released versions only
+
+## v2.0.0 - 2025-11-23
+### Breaking Changes
+- Renamed command from `/git-commit` to `/git-commit-with-changelog`
+- Command now always validates and repairs CHANGELOG on every run
+
+### Added
+- **CHANGELOG validation**: Always verify CHANGELOG matches git history before any operation
+- **Auto-repair**: Automatically fix missing or incorrect CHANGELOG entries from git history
+- Two-phase workflow: Phase 1 (validation/repair) always runs, Phase 2 (new commit) only if changes exist
+- Separate commit for CHANGELOG repairs when needed
+- Git history parsing to reconstruct missing CHANGELOG entries retroactively
+
+### Changed
+- Command description updated to reflect validation/repair focus
+- Workflow restructured into Phase 1 (validation) and Phase 2 (commit)
+- Enhanced important notes with validation-first approach
+- Updated all examples to use new command name
+
+## v1.3.0 - 2025-11-23
+### Added
+- Smart version detection from project files (package.json, pyproject.toml, Cargo.toml, pom.xml, build.gradle)
+- Git tag version detection with semver pattern matching
+- Multi-language project support (Node.js, Python, Rust, Java/Maven, Gradle)
+- Auto-sync version updates to project files after version bump
+
+### Changed
+- Version detection priority: project files > git tags > CHANGELOG.md > default
+- Workflow now includes version sync step to maintain consistency across files
+- Enhanced important notes with version detection details
+
+## v1.2.0 - 2025-11-22
+### Changed
+- Renamed command from git-add-commit to git-commit for brevity
+
+## v1.1.0 - 2025-11-22
+### Added
+- CHANGELOG.md auto-management support
+- Semantic version detection and bumping
+- Keep a Changelog format compliance
+- Auto-categorization (Added, Fixed, Changed, etc.)
+
+### Changed
+- Added Write, Edit, Glob tools to allowed-tools
+- Enhanced workflow with CHANGELOG update step
+
+## v1.0.1 - 2025-08-20
+### Changed
+- Renamed command from commit to git-add-commit
+
+## v1.0.0 - 2025-08-20
+### Added
+- Initial version with conventional commit support
+- Default language settings (Chinese)
+- User input for additional context
+
+Author: 公众号：手工川
+Created: 2025-08-20
+Updated: 2025-11-26
